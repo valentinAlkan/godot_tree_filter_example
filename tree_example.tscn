@@ -1,0 +1,169 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://godot_tree_filter_example/tree_example.gd" type="Script" id=1]
+
+[node name="Economy" type="Node"]
+
+script/script = ExtResource( 1 )
+root_node_text = "Resources"
+choices = [ "gold", "steel", "iron", "platinum", "whatever" ]
+spacing = 10
+
+[node name="Panel" type="Panel" parent="."]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Panel"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 10.0
+margin/right = 10.0
+margin/bottom = 10.0
+split/offset = 0
+split/collapsed = false
+split/dragger_visibility = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HSplitContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 250.0
+margin/bottom = 580.0
+alignment = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HSplitContainer/VBoxContainer"]
+
+editor/display_folded = true
+rect/min_size = Vector2( 250, 0 )
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 250.0
+margin/bottom = 24.0
+alignment = 0
+
+[node name="LineEdit" type="LineEdit" parent="Panel/HSplitContainer/VBoxContainer/HBoxContainer"]
+
+rect/min_size = Vector2( 175, 0 )
+hint/tooltip = "Search. While typing here, press \'Enter\' to select all visible choices."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 175.0
+margin/bottom = 24.0
+placeholder/alpha = 0.6
+focus_mode = 2
+caret/caret_blink = false
+caret/caret_blink_speed = 0.65
+
+[node name="btnClear" type="Button" parent="Panel/HSplitContainer/VBoxContainer/HBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 179.0
+margin/top = 0.0
+margin/right = 223.0
+margin/bottom = 24.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Clear"
+flat = false
+
+[node name="HBoxContainer 2" type="HBoxContainer" parent="Panel/HSplitContainer/VBoxContainer"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 28.0
+margin/right = 250.0
+margin/bottom = 48.0
+alignment = 0
+
+[node name="btnSelAll" type="Button" parent="Panel/HSplitContainer/VBoxContainer/HBoxContainer 2"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 123.0
+margin/bottom = 20.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Select all"
+flat = false
+
+[node name="btnSelNone" type="Button" parent="Panel/HSplitContainer/VBoxContainer/HBoxContainer 2"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 127.0
+margin/top = 0.0
+margin/right = 250.0
+margin/bottom = 20.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Select None"
+flat = false
+
+[node name="ItemList" type="Tree" parent="Panel/HSplitContainer/VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 52.0
+margin/right = 250.0
+margin/bottom = 580.0
+
+[node name="ItemDetail" type="ScrollContainer" parent="Panel/HSplitContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 262.0
+margin/top = 0.0
+margin/right = 1004.0
+margin/bottom = 580.0
+scroll/horizontal = true
+scroll/vertical = true
+
+
